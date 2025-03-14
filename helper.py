@@ -3,6 +3,11 @@ from pymed import PubMed
 
 
 def pubmed_search(query, max_results=5):
+    print("--------------------------------------------")
+    print("Searching PubMed for articles...")
+    print(f"Query: {query}")
+    print(f"Max Results: {max_results}")
+    print("--------------------------------------------")
     pubmed = PubMed(tool="MyTool", email="sharozhaseeb1@gmail.com")
     results = pubmed.query(query, max_results=max_results)
 
