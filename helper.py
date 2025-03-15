@@ -1,5 +1,46 @@
 from pymed import PubMed
+import base64
+import requests
 
+def save_mermaid_concept_map_as_image(mermaid_code: str, output_file: str = "output.svg"):
+    """
+    Saves a Mermaid diagram as an image using the Mermaid.ink API.
+    
+    Args:
+        mermaid_code (str): The Mermaid code as a string.
+        output_file (str): The output file name (supports .png, .svg, .pdf).
+    """
+    print("--------------------------------------------")
+    print("In save mermaid concept map as image function...")
+    if not output_file.endswith((".png", ".svg", ".pdf")):
+        raise ValueError("Output file must have a valid extension (.png, .svg, .pdf)")
+    elif not mermaid_code:
+        raise ValueError("Mermaid code cannot be empty")
+    
+    if output_file.endswith(".png"):
+        mermaid_api_url = "https://mermaid.ink/img/"
+    elif output_file.endswith(".svg"):
+        mermaid_api_url = "https://mermaid.ink/svg/"
+    
+    # Encode Mermaid code to Base64
+    encoded_diagram = base64.urlsafe_b64encode(mermaid_code.encode()).decode()
+    
+    # Generate the full API URL
+    image_url = f"{mermaid_api_url}{encoded_diagram}"
+    
+    try:
+        # Fetch the image from the API
+        response = requests.get(image_url)
+        response.raise_for_status()
+        
+        # Save the image
+        with open(output_file, "wb") as file:
+            file.write(response.content)
+        print(f"Diagram saved as {output_file}")
+
+        return f"Diagram saved as {output_file}"
+    except requests.RequestException as e:
+        print(f"Error generating image: {e}")
 
 
 def pubmed_search(query, max_results=5):
