@@ -54,7 +54,7 @@ def research_ideas_chatbot(user_message, chat_history = None):
                             },
                             "output_file": {
                                 "type": "string",
-                                "description": "The output file name (supports .png, .svg, .pdf). Defaults to 'output.svg'.",
+                                "description": "The output file name (supports .png, .svg). Defaults to 'output.svg'.",
                                 "default": "output.svg"
                             }
                         },
