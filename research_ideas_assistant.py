@@ -1,4 +1,4 @@
-from helper import convert_pubmed_resp_to_str, pubmed_search, save_mermaid_concept_map_as_image
+from helper import convert_pubmed_resp_to_str, pubmed_search, generate_and_upload_mindmap
 # from helper import 
 from dotenv import load_dotenv
 from openai import OpenAI
@@ -40,28 +40,28 @@ def research_ideas_chatbot(user_message, chat_history = None):
                     }
                 }
             },
-            # {
-            #     "type": "function",
-            #     "function": {
-            #         "name": "save_mermaid_concept_map_as_image",
-            #         "description": "Saves a Mermaid diagram as an image using the Mermaid.ink API.",
-            #         "parameters": {
-            #             "type": "object",
-            #             "properties": {
-            #                 "mermaid_code": {
-            #                     "type": "string",
-            #                     "description": "The Mermaid diagram code as a string."
-            #                 },
-            #                 "output_file": {
-            #                     "type": "string",
-            #                     "description": "The output file name (supports .png, .svg). Defaults to 'output.svg'.",
-            #                     "default": "output.svg"
-            #                 }
-            #             },
-            #             "required": ["mermaid_code"]
-            #         }
-            #     }
-            # }
+            {
+                "type": "function",
+                "function": {
+                    "name": "generate_and_upload_mindmap",
+                    "description": "Parses Mermaid mindmap code, generates a mind map, and uploads it as an SVG to GoFile.",
+                    "parameters": {
+                        "type": "object",
+                        "properties": {
+                            "mermaid_code": {
+                                "type": "string",
+                                "description": "Mermaid mindmap syntax."
+                            }
+                        },
+                        "required": ["mermaid_code"]
+                    },
+                    "returns": {
+                        "type": "string",
+                        "description": "GoFile download link for the generated mind map SVG."
+                    }
+                }
+            }
+
             ]
     
     # If the user has already provided some context, add it to the messages list
@@ -155,12 +155,12 @@ def research_ideas_chatbot(user_message, chat_history = None):
                     print(messages)
                 print("--------------------------------------------")
 
-            elif tool_call.function.name == "save_mermaid_concept_map_as_image":
+            elif tool_call.function.name == "generate_and_upload_mindmap":
                 messages.append({"role": "assistant", "tool_calls": [tool_call]})
                 args = json.loads(tool_call.function.arguments)
-                output_file = args["output_file"]
+                # output_file = args["output_file"]
                 mermaid_code = args["mermaid_code"]
-                resp = save_mermaid_concept_map_as_image(mermaid_code, output_file)
+                resp = generate_and_upload_mindmap(mermaid_code)
                 messages.append({"role": "tool", "tool_call_id": tool_call.id, "content": resp})
                 print("--------formatted messages------------------")
                 try:
@@ -185,7 +185,7 @@ def research_ideas_chatbot(user_message, chat_history = None):
                 print("--------------------------------------------")
 
 
-            if tool_call.function.name not in ["pubmed_search", "save_mermaid_concept_map_as_image"]:
+            if tool_call.function.name not in ["pubmed_search", "generate_and_upload_mindmap"]:
                 print(f"Tool call: {tool_call.function.name} not found.")
                 return {"error": "Tool call not found."}
 
