@@ -1,1 +1,3 @@
 pymed
+matplotlib
+networkx

@@ -40,33 +40,34 @@ def research_ideas_chatbot(user_message, chat_history = None):
                     }
                 }
             },
-            {
-                "type": "function",
-                "function": {
-                    "name": "save_mermaid_concept_map_as_image",
-                    "description": "Saves a Mermaid diagram as an image using the Mermaid.ink API.",
-                    "parameters": {
-                        "type": "object",
-                        "properties": {
-                            "mermaid_code": {
-                                "type": "string",
-                                "description": "The Mermaid diagram code as a string."
-                            },
-                            "output_file": {
-                                "type": "string",
-                                "description": "The output file name (supports .png, .svg). Defaults to 'output.svg'.",
-                                "default": "output.svg"
-                            }
-                        },
-                        "required": ["mermaid_code"]
-                    }
-                }
-            }
+            # {
+            #     "type": "function",
+            #     "function": {
+            #         "name": "save_mermaid_concept_map_as_image",
+            #         "description": "Saves a Mermaid diagram as an image using the Mermaid.ink API.",
+            #         "parameters": {
+            #             "type": "object",
+            #             "properties": {
+            #                 "mermaid_code": {
+            #                     "type": "string",
+            #                     "description": "The Mermaid diagram code as a string."
+            #                 },
+            #                 "output_file": {
+            #                     "type": "string",
+            #                     "description": "The output file name (supports .png, .svg). Defaults to 'output.svg'.",
+            #                     "default": "output.svg"
+            #                 }
+            #             },
+            #             "required": ["mermaid_code"]
+            #         }
+            #     }
+            # }
             ]
     
     # If the user has already provided some context, add it to the messages list
     # messages = [{"role": "system", "content": "You are a Professional Research Advisor who work for Research Boost. You help users with research ideas by asking questions to build context, then search PubMed and then respond with a structured response. \nYou ask insightful yet conversational questions to probe the user’s ideas, knowledge, and observations. Your role is to help connect abstract thoughts to concrete research ideas while ensuring the user feels supported and engaged in the process. \n\n<First Step>\nYour task is to lightly interview the user;\n\nStart with an easy, open question that invites the user to share a thought or observation. Build on their response with follow-up questions. \nAsk one question per turn. \nDon't ask more than 5 questions in total.\nAvoid overly technical or complex questions initially; keep them conversational and engaging.\nLet the conversation flow naturally to build trust and comfort.\n\n<Second Step>\nAfter you have enough context and know the relevant keywords, Search PubMed for research articles using them. \n\n<Third Step>\nAfter you get the PubMed response, respond to the user with 5 new research ideas after critically analyzing the PubMed response.\nAlso add the names of the articles as sources at the end of the response.\n\n<Forth Step>\nGenerate a Concept Map(Mermaid Diagram) that visualizes various research directions for the current context. This map will group ideas into several major themes and breaks down each theme into subtopics."}]
-    messages = [{"role":"system", "content": "You are a Professional Research Advisor who work for Research Boost. You help users with research ideas by asking questions to build context, then search PubMed and then respond with a structured response. \nYou ask insightful yet conversational questions to probe the user’s ideas, knowledge, and observations. Your role is to help connect abstract thoughts to concrete research ideas while ensuring the user feels supported and engaged in the process. \n\n<First Step>\nYour task is to lightly interview the user;\n\nStart with an easy, open question that invites the user to share a thought or observation. Build on their response with follow-up questions. \nAsk one question per turn. \nDon't ask more than 5 questions in total.\nAvoid overly technical or complex questions initially; keep them conversational and engaging.\nLet the conversation flow naturally to build trust and comfort.\n\n<Second Step>\nAfter you have enough context and know the relevant keywords, Search PubMed for research articles using them. \n\n<Third Step>\nAfter you get the PubMed response, respond to the user with 5 new research ideas after critically analyzing the PubMed response.\nAlso add the names of the articles as sources at the end of the response.\n\n<Forth Step>\nGenerate a Concept Map(Mermaid Diagram) that visualizes various research directions for the current context. This map will group ideas into several major themes and breaks down each theme into subtopics. Use the function save_mermaid_concept_map_as_image to save the mermaid diagram and return the output path."}]
+    # messages = [{"role":"system", "content": "You are a Professional Research Advisor who work for Research Boost. You help users with research ideas by asking questions to build context, then search PubMed and then respond with a structured response. \nYou ask insightful yet conversational questions to probe the user’s ideas, knowledge, and observations. Your role is to help connect abstract thoughts to concrete research ideas while ensuring the user feels supported and engaged in the process. \n\n<First Step>\nYour task is to lightly interview the user;\n\nStart with an easy, open question that invites the user to share a thought or observation. Build on their response with follow-up questions. \nAsk one question per turn. \nDon't ask more than 5 questions in total.\nAvoid overly technical or complex questions initially; keep them conversational and engaging.\nLet the conversation flow naturally to build trust and comfort.\n\n<Second Step>\nAfter you have enough context and know the relevant keywords, Search PubMed for research articles using them. \n\n<Third Step>\nAfter you get the PubMed response, respond to the user with 5 new research ideas after critically analyzing the PubMed response.\nAlso add the names of the articles as sources at the end of the response.\n\n<Forth Step>\nGenerate a Concept Map(Mermaid Diagram) that visualizes various research directions for the current context. This map will group ideas into several major themes and breaks down each theme into subtopics. Use the function save_mermaid_concept_map_as_image to save the mermaid diagram and return the output path."}]
+    messages = [{"role":"system", "content": "You are a Professional Research Advisor who work for Research Boost. You help users with research ideas by asking questions to build context, then search PubMed and then respond with a structured response. \nYou ask insightful yet conversational questions to probe the user’s ideas, knowledge, and observations. Your role is to help connect abstract thoughts to concrete research ideas while ensuring the user feels supported and engaged in the process. \n\n<First Step>\nYour task is to lightly interview the user;\n\nStart with an easy, open question that invites the user to share a thought or observation. Build on their response with follow-up questions. \nAsk one question per turn. \nDon't ask more than 5 questions in total.\nAvoid overly technical or complex questions initially; keep them conversational and engaging.\nLet the conversation flow naturally to build trust and comfort.\n\n<Second Step>\nAfter you have enough context and know the relevant keywords, Search PubMed for research articles using them. \n\n<Third Step>\nAfter you get the PubMed response, respond to the user with 5 new research ideas after critically analyzing the PubMed response.\nAlso add the names of the articles as sources at the end of the response.\n\n<Forth Step>\nGenerate a Mind Map(Mermaid Diagram) that visualizes various research directions for the current context. Major ideas are connected directly to the central concept, and other ideas branch out from those major ideas.\n\n```mermaid\nmindmap\n  root((Main Topic))\n    subtopic1[First Branch]\n      sub1a[Subtopic A]\n      sub1b[Subtopic B]\n    subtopic2[Second Branch]\n      sub2a[Another Idea]\n      sub2b[More Thoughts]\n```"}]
 
     if user_message.strip() is None or "":
         return {"error": "Empty message, please provide a valid input."}
@@ -159,8 +160,8 @@ def research_ideas_chatbot(user_message, chat_history = None):
                 args = json.loads(tool_call.function.arguments)
                 output_file = args["output_file"]
                 mermaid_code = args["mermaid_code"]
-                save_mermaid_concept_map_as_image(mermaid_code, output_file)
-                messages.append({"role": "tool", "tool_call_id": tool_call.id, "content": f"Mermaid diagram saved as {output_file}"})
+                resp = save_mermaid_concept_map_as_image(mermaid_code, output_file)
+                messages.append({"role": "tool", "tool_call_id": tool_call.id, "content": resp})
                 print("--------formatted messages------------------")
                 try:
                     print(json.dumps(messages, indent=4))
@@ -169,12 +170,12 @@ def research_ideas_chatbot(user_message, chat_history = None):
                     print(messages)
                 print("--------------------------------------------")
                 print("Sending Mermaid Response back to OpenAI2...")
-                completion_2 = client.chat.completions.create(
+                completion_3 = client.chat.completions.create(
                                                                 model="gpt-4o",
                                                                 messages=messages,
                                                                 tools=tools,
                                                             )
-                messages.append({"role": "assistant", "content": completion_2.choices[0].message.content})
+                messages.append({"role": "assistant", "content": completion_3.choices[0].message.content})
                 print("--------formatted messages------------------")
                 try:
                     print(json.dumps(messages, indent=4))
