@@ -69,7 +69,7 @@ def generate_and_upload_mindmap(mermaid_code):
     # Step 3: Generate the mind map image in SVG format
     plt.figure(figsize=(10, 6))
     nx.draw(G, pos, with_labels=True, node_color="lightblue", edge_color="gray",
-            node_size=3000, font_size=4.5, font_weight="bold", alpha=0.8, arrows=False)
+            node_size=4500, font_size=4.5, font_weight="bold", alpha=0.8, arrows=False)
 
     svg_buffer = io.BytesIO()
     plt.savefig(svg_buffer, format="svg", bbox_inches="tight")

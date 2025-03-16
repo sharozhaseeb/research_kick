@@ -36,7 +36,7 @@ def research_ideas_chatbot(user_message, chat_history = None):
                                 "default": 5
                             }
                         },
-                        "required": ["query"]
+                        "required": ["query", "max_results"]
                     }
                 }
             },
@@ -67,7 +67,7 @@ def research_ideas_chatbot(user_message, chat_history = None):
     # If the user has already provided some context, add it to the messages list
     # messages = [{"role": "system", "content": "You are a Professional Research Advisor who work for Research Boost. You help users with research ideas by asking questions to build context, then search PubMed and then respond with a structured response. \nYou ask insightful yet conversational questions to probe the user’s ideas, knowledge, and observations. Your role is to help connect abstract thoughts to concrete research ideas while ensuring the user feels supported and engaged in the process. \n\n<First Step>\nYour task is to lightly interview the user;\n\nStart with an easy, open question that invites the user to share a thought or observation. Build on their response with follow-up questions. \nAsk one question per turn. \nDon't ask more than 5 questions in total.\nAvoid overly technical or complex questions initially; keep them conversational and engaging.\nLet the conversation flow naturally to build trust and comfort.\n\n<Second Step>\nAfter you have enough context and know the relevant keywords, Search PubMed for research articles using them. \n\n<Third Step>\nAfter you get the PubMed response, respond to the user with 5 new research ideas after critically analyzing the PubMed response.\nAlso add the names of the articles as sources at the end of the response.\n\n<Forth Step>\nGenerate a Concept Map(Mermaid Diagram) that visualizes various research directions for the current context. This map will group ideas into several major themes and breaks down each theme into subtopics."}]
     # messages = [{"role":"system", "content": "You are a Professional Research Advisor who work for Research Boost. You help users with research ideas by asking questions to build context, then search PubMed and then respond with a structured response. \nYou ask insightful yet conversational questions to probe the user’s ideas, knowledge, and observations. Your role is to help connect abstract thoughts to concrete research ideas while ensuring the user feels supported and engaged in the process. \n\n<First Step>\nYour task is to lightly interview the user;\n\nStart with an easy, open question that invites the user to share a thought or observation. Build on their response with follow-up questions. \nAsk one question per turn. \nDon't ask more than 5 questions in total.\nAvoid overly technical or complex questions initially; keep them conversational and engaging.\nLet the conversation flow naturally to build trust and comfort.\n\n<Second Step>\nAfter you have enough context and know the relevant keywords, Search PubMed for research articles using them. \n\n<Third Step>\nAfter you get the PubMed response, respond to the user with 5 new research ideas after critically analyzing the PubMed response.\nAlso add the names of the articles as sources at the end of the response.\n\n<Forth Step>\nGenerate a Concept Map(Mermaid Diagram) that visualizes various research directions for the current context. This map will group ideas into several major themes and breaks down each theme into subtopics. Use the function save_mermaid_concept_map_as_image to save the mermaid diagram and return the output path."}]
-    messages = [{"role":"system", "content": "You are a Professional Research Advisor who work for Research Boost. You help users with research ideas by asking questions to build context, then search PubMed and then respond with a structured response. \nYou ask insightful yet conversational questions to probe the user’s ideas, knowledge, and observations. Your role is to help connect abstract thoughts to concrete research ideas while ensuring the user feels supported and engaged in the process. \n\n<First Step>\nYour task is to lightly interview the user;\n\nStart with an easy, open question that invites the user to share a thought or observation. Build on their response with follow-up questions. \nAsk one question per turn. \nDon't ask more than 5 questions in total.\nAvoid overly technical or complex questions initially; keep them conversational and engaging.\nLet the conversation flow naturally to build trust and comfort.\n\n<Second Step>\nAfter you have enough context and know the relevant keywords, Search PubMed for research articles using them. \n\n<Third Step>\nAfter you get the PubMed response, respond to the user with 5 new research ideas after critically analyzing the PubMed response.\nAlso add the names of the articles as sources at the end of the response.\n\n<Forth Step>\nGenerate a Mind Map(Mermaid Diagram) that visualizes various research directions for the current context. Major ideas are connected directly to the central concept, and other ideas branch out from those major ideas.\n\n```mermaid\nmindmap\n  root((Main Topic))\n    subtopic1[First Branch]\n      sub1a[Subtopic A]\n      sub1b[Subtopic B]\n    subtopic2[Second Branch]\n      sub2a[Another Idea]\n      sub2b[More Thoughts]\n```"}]
+    messages = [{"role":"system", "content": "You are a Professional Research Advisor who work for Research Boost. You help users with research ideas by asking questions to build context, then search PubMed and then respond with a structured response. \nYou ask insightful yet conversational questions to probe the user’s ideas, knowledge, and observations. Your role is to help connect abstract thoughts to concrete research ideas while ensuring the user feels supported and engaged in the process. \n\n<First Step>\nYour task is to lightly interview the user;\n\nStart with an easy, open question that invites the user to share a thought or observation. Build on their response with follow-up questions. \nAsk one question per turn. \nDon't ask more than 5 questions in total.\nAvoid overly technical or complex questions initially; keep them conversational and engaging.\nLet the conversation flow naturally to build trust and comfort.\n\n<Second Step>\nAfter you have enough context and know the relevant keywords, Search PubMed for research articles using them. \n\n<Third Step>\nAfter you get the PubMed response, respond to the user with 5 new research ideas after critically analyzing the PubMed response.\nAlso add the names of the articles as sources at the end of the response.\n\n<Forth Step>\nGenerate a Mind Map(Mermaid Diagram) that visualizes various research directions for the current context. Major ideas are connected directly to the central concept, and other ideas branch out from those major ideas.\n\n```mermaid\nmindmap\n  root((Short-term Effects of L-Carnitine for Weight Loss))\n    Lipid Metabolism\n      Enzyme Interaction\n    Energy Expenditure\n      Postprandial Effects\n      Basal Metabolism\n    Plasma Levels\n      Dietary Modifications\n      Urinary Concentrations\n    Gut Microbiota\n      Metabolomic Changes\n      Microbiota Composition\n    Thermogenic Effects\n      Thermogenesis\n      Pathway Inhibition\n```"}]
 
     if user_message.strip() is None or "":
         return {"error": "Empty message, please provide a valid input."}
@@ -81,15 +81,16 @@ def research_ideas_chatbot(user_message, chat_history = None):
 
     messages.append({"role": "user", "content": user_message})
 
-    print("--------formatted messages------------------")
-    try:
-        print(json.dumps(messages, indent=4))
-    except TypeError as e:
-        print(f"Error: {e}")
-        print(messages)
-    print("--------------------------------------------")
-    print("\n")
-    print("Sending message to OpenAI...")
+    # print("--------formatted messages------------------")
+    # try:
+    #     print(json.dumps(messages, indent=4))
+    # except TypeError as e:
+    #     print(f"Error: {e}")
+    #     print(messages)
+    # print("--------------------------------------------")
+    # print("\n")
+    # print("Sending message to OpenAI...")
+
     completion = client.chat.completions.create(
                                                     model="gpt-4o",
                                                     messages=messages,
@@ -105,7 +106,7 @@ def research_ideas_chatbot(user_message, chat_history = None):
 
     # messages.append({"role": "assistant", "content": completion.choices[0].message.content})
 
-    print("--------------------------------------------")
+    # print("--------------------------------------------")
     # print("Chat hist")
     if finish_reason == "tool_calls":
         tool_calls = completion.choices[0].message.tool_calls
@@ -133,13 +134,14 @@ def research_ideas_chatbot(user_message, chat_history = None):
                                     "content": pubmed_search_result_str
                                 })
                 
-                print("--------formatted messages------------------")
-                try:
-                    print(json.dumps(messages, indent=4))
-                except TypeError as e:
-                    print(f"Error: {e}")
-                    print(messages)
-                print("--------------------------------------------")
+                # print("--------formatted messages------------------")
+                # try:
+                #     print(json.dumps(messages, indent=4))
+                # except TypeError as e:
+                #     print(f"Error: {e}")
+                #     print(messages)
+                # print("--------------------------------------------")
+
                 print("Sending Pubmed Response back to OpenAI2...")
                 completion_2 = client.chat.completions.create(
                                                                 model="gpt-4o",
@@ -147,13 +149,14 @@ def research_ideas_chatbot(user_message, chat_history = None):
                                                                 tools=tools,
                                                             )
                 messages.append({"role": "assistant", "content": completion_2.choices[0].message.content})
-                print("--------formatted messages------------------")
-                try:
-                    print(json.dumps(messages, indent=4))
-                except TypeError as e:
-                    print(f"Error: {e}")
-                    print(messages)
-                print("--------------------------------------------")
+
+                # print("--------formatted messages------------------")
+                # try:
+                #     print(json.dumps(messages, indent=4))
+                # except TypeError as e:
+                #     print(f"Error: {e}")
+                #     print(messages)
+                # print("--------------------------------------------")
 
             elif tool_call.function.name == "generate_and_upload_mindmap":
                 messages.append({"role": "assistant", "tool_calls": [tool_call]})
@@ -162,13 +165,15 @@ def research_ideas_chatbot(user_message, chat_history = None):
                 mermaid_code = args["mermaid_code"]
                 resp = generate_and_upload_mindmap(mermaid_code)
                 messages.append({"role": "tool", "tool_call_id": tool_call.id, "content": resp})
-                print("--------formatted messages------------------")
-                try:
-                    print(json.dumps(messages, indent=4))
-                except TypeError as e:
-                    print(f"Error: {e}")
-                    print(messages)
-                print("--------------------------------------------")
+
+                # print("--------formatted messages------------------")
+                # try:
+                #     print(json.dumps(messages, indent=4))
+                # except TypeError as e:
+                #     print(f"Error: {e}")
+                #     print(messages)
+                # print("--------------------------------------------")
+
                 print("Sending Mermaid Response back to OpenAI2...")
                 completion_3 = client.chat.completions.create(
                                                                 model="gpt-4o",
@@ -176,13 +181,14 @@ def research_ideas_chatbot(user_message, chat_history = None):
                                                                 tools=tools,
                                                             )
                 messages.append({"role": "assistant", "content": completion_3.choices[0].message.content})
-                print("--------formatted messages------------------")
-                try:
-                    print(json.dumps(messages, indent=4))
-                except TypeError as e:
-                    print(f"Error: {e}")
-                    print(messages)
-                print("--------------------------------------------")
+
+                # print("--------formatted messages------------------")
+                # try:
+                #     print(json.dumps(messages, indent=4))
+                # except TypeError as e:
+                #     print(f"Error: {e}")
+                #     print(messages)
+                # print("--------------------------------------------")
 
 
             if tool_call.function.name not in ["pubmed_search", "generate_and_upload_mindmap"]:
@@ -191,15 +197,16 @@ def research_ideas_chatbot(user_message, chat_history = None):
 
 
     elif finish_reason == "stop" or finish_reason == "lenght":
-        print(f"Finish reason: {finish_reason}")
+        # print(f"Finish reason: {finish_reason}")
         messages.append({"role": "assistant", "content": completion.choices[0].message.content})
-        print("--------formatted messages------------------")
-        try:
-            print(json.dumps(messages, indent=4))
-        except TypeError as e:
-            print(f"Error: {e}")
-            print(messages)
-        print("--------------------------------------------")
+
+        # print("--------formatted messages------------------")
+        # try:
+        #     print(json.dumps(messages, indent=4))
+        # except TypeError as e:
+        #     print(f"Error: {e}")
+        #     print(messages)
+        # print("--------------------------------------------")
 
 
     messages = [message for message in messages if isinstance(message, dict) and message.get("role") != "system"]
