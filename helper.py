@@ -11,18 +11,19 @@ import networkx as nx
 def generate_and_upload_mindmap(mermaid_code):
     """
     Parses Mermaid mindmap code, generates a mind map, and uploads it as an SVG to GoFile.
-    
+
     Args:
         mermaid_code (str): Mermaid mindmap syntax.
-    
+
     Returns:
         str: GoFile download link for the generated mind map SVG.
     """
     def parse_mermaid_mindmap(code):
-        """Converts Mermaid mindmap syntax into a list of edges for graph plotting."""
+        """Converts Mermaid mindmap syntax into a list of edges and assigns hierarchy levels."""
         lines = code.strip().split("\n")
         edges = []
         parent_stack = []
+        node_levels = {}
 
         for line in lines:
             indent_level = len(line) - len(line.lstrip())  # Count leading spaces
@@ -33,13 +34,17 @@ def generate_and_upload_mindmap(mermaid_code):
                     parent_stack.pop()
 
                 if parent_stack:
-                    edges.append((parent_stack[-1][0], node))
+                    parent, parent_level = parent_stack[-1]
+                    edges.append((parent, node))
+                    node_levels[node] = parent_level + 1
+                else:
+                    node_levels[node] = 0  # Root node
 
                 parent_stack.append((node, indent_level))
 
-        return edges
+        return edges, node_levels
 
-    def hierarchy_pos(G, root=None, width=1., vert_gap=0.4, xcenter=0.5, pos=None, level=0):
+    def hierarchy_pos(G, root=None, width=2.5, vert_gap=1.5, xcenter=0.5, pos=None, level=0):
         """Assigns hierarchical positions for nodes in the tree."""
         if pos is None:
             pos = {root: (xcenter, 1)}
@@ -56,7 +61,7 @@ def generate_and_upload_mindmap(mermaid_code):
         return pos
 
     # Step 1: Parse Mermaid mind map structure
-    edges = parse_mermaid_mindmap(mermaid_code)
+    edges, node_levels = parse_mermaid_mindmap(mermaid_code)
     if not edges:
         raise ValueError("Invalid Mermaid mindmap format.")
 
@@ -64,19 +69,32 @@ def generate_and_upload_mindmap(mermaid_code):
     G = nx.DiGraph()
     G.add_edges_from(edges)
     root = edges[0][0]  # Take the first node as root
+
     pos = hierarchy_pos(G, root)
 
-    # Step 3: Generate the mind map image in SVG format
-    plt.figure(figsize=(10, 6))
-    nx.draw(G, pos, with_labels=True, node_color="lightblue", edge_color="gray",
-            node_size=4500, font_size=4.5, font_weight="bold", alpha=0.8, arrows=False)
+
+    # Step 3: Define colors based on hierarchy levels
+    color_map = {
+        0: "#D3D3D3",  # Light Grey (mindmap root)
+        1: "#edb72d",  # Darker Grey (main concept)
+        2: "#FFD580",  # Light Orange (first-level subtopics)
+        3: "#ed872d",  # Blue (second-level subtopics)
+        4: "#499fbb",  # Lighter Blue (third-level subtopics)
+    }
+
+    node_colors = [color_map.get(node_levels[node], "#87CEFA") for node in G.nodes]
+
+    # Step 4: Generate the mind map image in SVG format
+    plt.figure(figsize=(25, 15))
+    nx.draw(G, pos, with_labels=True, node_color=node_colors, edge_color="gray",
+            node_size=9000, font_size=4.5, font_weight="bold", alpha=0.9, arrows=False)
 
     svg_buffer = io.BytesIO()
     plt.savefig(svg_buffer, format="svg", bbox_inches="tight")
     plt.close()
     svg_buffer.seek(0)
 
-    # Step 4: Upload the SVG to GoFile
+    # Step 5: Upload the SVG to GoFile
     files = {"file": ("mindmap.svg", svg_buffer, "image/svg+xml")}
     response = requests.post("https://store1.gofile.io/uploadFile", files=files)
     response.raise_for_status()
