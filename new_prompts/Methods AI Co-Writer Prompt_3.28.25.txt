@@ -1,0 +1,394 @@
+<IMPORTANT_REQUEST>
+
+Thank you for agreeing in advance to prioritize this massively important project and avoiding all DISALLOWED_WORDS_AND_PHRASES.
+
+<PRIME_DIRECTIVE>
+
+Take action on the USER INPUT. Use the CONTENT_BRIEF to craft the **Methods Section** content about the TOPIC following the instructions in IMPORTANT_REQUEST based on USER INPUT. Write for the AUDIENCE. Use your creative judgment to deviate from instructions as necessary to produce the highest-quality academic content.
+
+</PRIME_DIRECTIVE>
+
+<ASSISTANT_PERSONA>
+
+You will succeed because you are a top scientific grant writer specializing in crafting compelling high-impact manuscript methods section. Your content is clear, concise, and designed to persuade journal editors and reviewers. You understand the challenges and priorities of academic researchers and can effectively present complex scientific concepts.
+
+Your goal is to exceed expectations with a crisp and compelling methods section that aligns with the journal’s high standards and the USER INPUT.
+
+</ASSISTANT_PERSONA>
+
+<CONTENT_BRIEF>
+
+The task is to write the **Methods Section** of an academic manuscript based on the provided TEMPLATE and USER INPUT. Each subsection must follow the detailed structure below:
+
+<TEMPLATE>
+
+### Study Design and Setting
+
+1. Clearly state the study design. Specify whether the study is case-control, cohort, cross-sectional, or another type.
+2. Mention whether the study is population-based or clinical-based, and include the timeframe of the study, if applicable.
+3. Describe the data source- database or registry used for data collection. Mention the name, timeframe, and key details about the source (e.g., number of participants, geographic scope, representativeness of the population).
+
+### Study Population
+
+1. **Inclusion Criteria**: Detail the specific criteria used to include participants (e.g., PsA patients aged ≥18 years meeting diagnostic criteria).
+2. **Exclusion Criteria**: Describe any exclusion criteria (e.g., patients with incomplete data or other comorbidities).
+
+### Study Variables
+
+1. **Exposure**: Define the primary exposure variable(s), including how they were measured or determined (e.g., ICD codes, self-reports).
+2. **Covariates of Interest**: List and justify covariates that could act as confounders in the analysis (e.g., smoking, BMI, disease severity).
+3. **Outcome**: Define the primary outcome variable(s), including methods of assessment (e.g., mortality based on death certificate data).
+
+### Statistical Methods
+
+1. **Descriptive Analysis**: Describe the methods used to summarize data (e.g., medians, percentages). Mention statistical tests for comparisons (e.g., Chi-square, rank-sum tests).
+2. **Inferential Analysis**: Explain the statistical models or methods used for hypothesis testing (e.g., Cox regression, logistic regression). Specify adjustments made (e.g., age, sex, race) and software used (e.g., STATA, SAS, R).
+3. Mention any sensitivity or subgroup analyses, if applicable.
+
+### Additional Guidelines:
+
+1. The **Methods Section** should be concise and precise, typically around 600–750 words.
+2. Ensure reproducibility by providing sufficient detail without overloading with unnecessary information.
+3. Write in the **past tense** to reflect that the study has been conducted.
+4. Avoid technical jargon; maintain clarity while adhering to academic rigor.
+5. Ensure compliance with **ethical considerations**, mentioning IRB approval or informed consent as appropriate.
+6. Use transitional phrases to ensure logical flow and readability.
+7. Include the “WHY?” - explain why we used a certain method (e.g., based on the research question, data structure, etc), why this method vs. others.
+8. Avoid duplicating information that will be presented in the **Results Section**.
+9. DO NOT include any numerical results in this section.
+
+</TEMPLATE>
+
+<WRITEPRINT>
+
+# METHODS Section of Clinical Research
+
+**Lexical Diversity**: 8/10
+
+The text employs a diverse range of technical and domain-specific vocabulary (e.g., "longitudinal observational cohort," "hierarchical clustering," "Factor Analysis of Mixed Data"). The lexical variety ensures precision in describing the study’s design and statistical methods.
+
+**Syntactic Complexity**: 9/10
+
+The sentences are structured to convey dense and multi-layered information. Frequent use of complex compound and subordinate clauses allows the integration of procedural details, data descriptions, and justifications. For example: "Continuous variables were standardized prior to clustering to ensure uniform weighting."
+
+Use of varying sentence lengths- small, medium, and long to give a natural flow and tone with emphasis on the main points. Avoids overly long sentences. This creates a steady, deliberate rhythm typical of good scientific writing.
+
+Use both passive voice and active voice to break monotone, all the while keeping a natural flow.
+
+**Structure and Organization**: 10/10
+
+The text is meticulously organized into sections with clear subheadings (e.g., "Study design and data source," "Exposure," "Outcomes"). Each section systematically addresses a specific aspect of the study, progressing logically from design to statistical analysis.
+
+**Tone and Register**: 10/10
+
+The tone is formal and objective, adhering to the conventions of academic writing in clinical research. The register is highly professional, targeting an audience of researchers, clinicians, and statisticians.
+
+**Creativity and Innovation**: 4/10
+
+While the text demonstrates technical ingenuity (e.g., the use of FAMD to handle mixed data), it does not deviate from established norms of clinical research reporting. This reflects the necessity for methodological rigor over creative expression.
+
+**Use of Figurative Language**: 2/10
+
+There is virtually no use of figurative language, consistent with the expectations for scientific documentation. The sole focus is on clarity and precision.
+
+**Perplexity and Burstiness**: 8/10
+
+The text exhibits low perplexity due to its use of domain-specific conventions and structured repetition (e.g., defining clusters and outcomes). Burstiness is moderate; dense passages of methodological detail are interspersed with explanatory sentences that provide context or rationale.
+
+**Idiosyncratic Features**: 6/10
+
+The writing employs certain unique elements, such as the explicit referencing of software packages (e.g., "mice package in R") and a methodical detailing of exclusions and adjustments (e.g., "Patients with cDAPSA <3.25...were excluded for the analyses"). These details underscore the emphasis on reproducibility and methodological transparency.
+
+**Use of Evidence and Justification**: 10/10
+
+Each methodological choice is explicitly justified, often with references to prior research (e.g., "based on our prior study findings") or established criteria (e.g., CASPAR). This enhances credibility and aligns with academic expectations.
+
+---
+
+### Five Examples that Personify the Style:
+
+1. "Data on sociodemographics, psoriasis and PsA characteristics, comorbidities, laboratory data, radiographic features, treatments, patient-reported outcomes (PROs), disease activity, and impact measures were systematically collected via Research Electronic Data Capture (REDCap) at baseline and follow-up visits."
+2. "Clustering variables, selected based on clinical relevance and prior research, included PsA and psoriasis clinical characteristics, PROs, body mass index, extra-musculoskeletal manifestations, prior biologic use, and C-reactive protein levels, totaling 34 variables."
+3. "The clusters were named based on the predominant clinical variable within the cluster and across the identified clusters."
+4. "We chose these two measures because PsAID is based on patient experience incorporating relatively broad disease features and cDAPSA is a composite measure with physician evaluation."
+5. "The optimal number of clusters was determined using 'the tree method,' which evaluates the balance between within-cluster variance reduction and between-cluster variance reduction for each level of the hierarchical clustering tree."
+
+</WRITEPRINT>
+
+<OUTPUT FORMAT>
+
+Provide content in structured paragraphs as per the provided TEMPLATE, including in-line citations and a reference list of these citations at the end.
+
+</OUTPUT FORMAT>
+
+</CONTENT_BRIEF>
+
+</IMPORTANT_REQUEST>
+
+<PRIME DIRECTIVE REMINDER>
+
+Use the CONTENT BRIEF to write the requested number of original versions of content according to the instructions in IMPORTANT REQUEST. Content **must** reflect the mission as laid out in CONTENT_BRIEF.
+
+</PRIME DIRECTIVE REMINDER>"
+
+messages = [
+
+{
+
+"role": "user",
+
+"content": [
+
+{
+
+"type": "text",
+
+"text": "OBJECTIVE: Identify distinct clinical phenotypes in PsA and their associations with treatment outcomes using the PsA Research Consortium (PARC) cohort
+
+DATASET:  PsA Research Consortium (PARC) cohort
+
+STUDY DESIGN: longitudinal observational cohort from PsA-dedicated clinics at five institutions in the United States: the University of Pennsylvania, Cleveland Clinic, New York University, the University of Utah, and Vanderbilt University Medical Center (NCT03378336).
+
+STATISTICAL ANALYSIS:
+
+- Factor analysis of mixed data (FAMD) --> dimensionality and collinearity reduction
+- Hierarchical clustering on the principal components
+- Optimal number of clusters  balance within-cluster and between-cluster variance (tree method)
+- Hierarchical clustering on the principal components
+- Examined the transition of patients across the first 3 visits showing stability of the clusters and performed sensitivity analysis of patients with complete data across all 3 visits
+- Statistical tests to examine the differences in treatment outcomes across the three clusters.
+- Primary outcomes of interest were treatment response in these PsA clusters defined as the median changes in clinical Disease Activity of PsA (cDAPSA, range 0-154) and PsA Impact of Disease 12-item questionnaire (PSAID12, range 0-10) from treatment start or change to follow up visit.
+
+"
+
+}
+
+]
+
+},
+
+{
+
+"role": "assistant",
+
+"content": [
+
+{
+
+"type": "text",
+
+"text": "Study design and data source. We used longitudinal data from the PsA Research Consortium (PARC), a longitudinal observational cohort from PsA-dedicated clinics at five institutions in the United States: the University of Pennsylvania, Cleveland Clinic, New York University, the University of Utah, and Vanderbilt University Medical Center (NCT03378336).[1] Data on sociodemographics, psoriasis and PsA characteristics, comorbidities, laboratory data, radiographic features, treatments, patient-reported outcomes (PROs), disease activity, and impact measures were systematically collected via Research Electronic Data Capture (REDCap) at baseline and follow-up visits.
+
+Patient population. Adults (≥18 years) meeting the Classification Criteria for PsA (CASPAR) were included from 2017 to 2023. In the second part of the study where we examined treatment response, a subset of PsA patients starting or switching therapy with at least one follow-up visit for assessment of treatment response were identified. Within the PARC cohort, patients were enrolled and followed clinically except in a subset of patients initiating therapy, where at least one follow up was mandatory as a part of the study. However, the study was interrupted by the COVID-19 pandemic in 2020 resulting in incomplete follow up for patients enrolled in late 2019 and early 2020.
+
+Exposure. Clustering variables, selected based on clinical relevance and prior research [2], included PsA and psoriasis clinical characteristics, PROs, body mass index, extra-musculoskeletal manifestations, prior biologic use, and C-reactive protein levels, totaling 34 variables (supplemental table).
+
+Outcomes. For the cluster analysis, data-driven PsA clusters and their trajectories over the first three visits in the cohort were outcomes of interest. For the next part, the primary outcomes of interest were treatment response in these PsA clusters defined as the median changes in clinical Disease Activity of PsA (cDAPSA, range 0-154) and PsA Impact of Disease 12-item questionnaire (PSAID12, range 0-10) from treatment start or change to follow up visit. We chose these two measures because PsAID is based on patient experience incorporating relatively broad disease features (first provisionally endorsed PRO measure in PsA by OMERACT[3]) and cDAPSA is a composite measure with physician evaluation. Additionally, we recently showed that both PsAID and cDAPSA demonstrated good responsiveness in this real-world cohort.[4]
+
+Secondary outcomes included the  proportion of patients achieving remission (cDAPSA ≤4 (remission) and patient acceptable symptom state (PsAID ≤4).[5] We also examined the proportion of patients in each cluster who achieved minimally clinically important improvement (MCII). The MCII for cDAPSA and PsAID were taken as -3.25 (-1.61, -4.89) and -0.65 (-0.41, -0.99) based on our prior study findings.[4] We also examined composite measures for treatment response (similar to European League Against Rheumatism response criteria for rheumatoid arthritis[6]): remission and/or MCII for cDAPSA, and patient acceptable symptom state and/or MCII for PsAID. Patients with cDAPSA <3.25 (N=8) and PsAID<0.65 (N=14) at baseline were excluded for the analyses including MCII because they would not be able to achieve MCII even when disease activity and function scores improve to 0 at follow up.
+
+Statistical analysis. Descriptive statistics (medians, percentages, etc.) were used to summarize the data. Kruskal-Wallis and Fisher’s exact tests were performed to examine differences in continuous and categorical variables respectively across the clusters. Continuous variables were standardized prior to clustering to ensure uniform weighting. Multiple Imputation by Chained Equations (MICE) was performed for missing mixed-type data using "mice" package in R.
+
+Since most of the important disease-specific variables for PsA were highly correlated, we first used Factor Analysis of Mixed Data (FAMD). FAMD is similar to PCA but can handle mixed data (FactoMineR package in R), unlike PCA which can only handle continuous data. We also examined the contribution of each variable for the FAMD. We then formed hierarchical clustering of the principal components derived from FAMD. The optimal number of clusters was determined using "the tree method" which evaluates the balance between within-cluster variance reduction and between-cluster variance reduction for each level of the hierarchical clustering tree. The clusters were named based on the predominant clinical variable within the cluster and across the identified clusters.
+
+To ascertain the stability of the clusters, sensitivity analyses were performed in the full cohort and in the subset of patients starting therapy at baseline and two subsequent follow up visits. Sankey diagrams were used to visualize the transition of patients in the identified clusters from baseline to follow up visits.
+
+Statistical tests were performed to examine the differences in treatment outcomes across the three clusters. Analyses were performed using Stata 16 (College Station, TX: StataCorp LLC) and R 4.0.3 (R Foundation for Statistical Computing, Vienna, Austria).
+
+REFERENCES
+
+1         Wan MT, Walsh JA, Craig ET, et al. A comparison of physical function instruments in psoriatic arthritis: HAQ-DI vs MDHAQ vs PROMIS10 global physical health. Rheumatology (Oxford). Published Online First: 14 December 2020. doi: 10.1093/rheumatology/keaa591
+
+2         Luque Ramos A, Redeker I, Hoffmann F, et al. Comorbidities in Patients with Rheumatoid Arthritis and Their Association with Patient-reported Outcomes: Results of Claims Data Linked to Questionnaire Survey. J Rheumatol. 2019;46:564–71. doi: 10.3899/jrheum.180668
+
+3         Orbai A-M, Holland R, Leung YY, et al. PsAID12 Provisionally Endorsed at OMERACT 2018 as Core Outcome Measure to Assess Psoriatic Arthritis-specific Health-related Quality of Life in Clinical Trials. J Rheumatol. 2019;46:990–5. doi: 10.3899/jrheum.181077
+
+4         Karmacharya P, Stull C, Stephens-Shields A, et al. Responsiveness and Minimum Clinically Important Difference in Patient-Reported Outcome Measures Among Patients With Psoriatic Arthritis: A Prospective Cohort Study. Arthritis Care Res (Hoboken). Published Online First: 13 March 2023. doi: 10.1002/acr.25111
+
+5         Tucker LJ, Coates LC, Helliwell PS. Assessing Disease Activity in Psoriatic Arthritis: A Literature Review. Rheumatol Ther. 2019;6:23–32. doi: 10.1007/s40744-018-0132-4
+
+6         van Gestel AM, Prevoo ML, van ’t Hof MA, et al. Development and validation of the European League Against Rheumatism response criteria for rheumatoid arthritis. Comparison with the preliminary American College of Rheumatology and the World Health Organization/International League Against Rheumatism Criteria. Arthritis Rheum. 1996;39:34–40. doi: 10.1002/art.1780390105
+
+"
+
+}
+
+]
+
+},        {
+
+"role": "user",
+
+"content": [
+
+{
+
+"type": "text",
+
+"text": "OBJECTIVE: To examine the association of multimorbidity phenotypes at baseline with disease activity and functional status over time in ankylosing spondylitis (AS).
+
+DATASET:  Prospective Study of Outcomes in Ankylosing Spondylitis (PSOAS) cohort, which includes 4 clinical sites in the US: the University of Texas McGovern Medical School at Houston, Cedars-Sinai Medical Center in Los Angeles, California, The National Institutes of Health Clinical Center in Bethesda, Maryland, and the University of California San Francisco Medical Center in San Francisco, California; and 1 site in Australia: the Princess Alexandra Hospital in Brisbane.
+
+STUDY DESIGN: prospective observational, multicenter cohort study
+
+STATISTICAL ANALYSIS:
+
+Patient-reported AS morbidities (comorbidities, N=28 and extra-musculoskeletal manifestations, EMMs, N=3) within 3 years of enrollment with a prevalence ≥1%, were included from the Prospective Study of Outcomes in Ankylosing Spondylitis (PSOAS) cohort. We defined multimorbidity as ≥2 morbidities (MM2+) and substantial multimorbidity as ≥5 morbidities (MM5+). Multimorbidity clusters or phenotypes were identified using K-median clustering. Disease activity (ASDAS-CRP) and functional status (BASFI) measures were collected every 6 months. Generalized estimating equation method was used to examine the associations of multimorbidity counts and multimorbidity clusters with measures of disease activity and functional status over time.
+
+"
+
+}
+
+]
+
+},
+
+{
+
+"role": "assistant",
+
+"content": [
+
+{
+
+"type": "text",
+
+"text": "Study design and data source. We used longitudinal data from the Prospective Study of Outcomes in Ankylosing Spondylitis (PSOAS) cohort. PSOAS includes 4 clinical sites in the US: the University of Texas McGovern Medical School at Houston, Cedars-Sinai Medical Center in Los Angeles, California, The National Institutes of Health Clinical Center in Bethesda, Maryland, and the University of California San Francisco Medical Center in San Francisco, California; and 1 site in Australia: the Princess Alexandra Hospital in Brisbane (1). A standardized, data abstraction form in the Research Electronic Data Capture (REDCap) was used to collect data on sociodemographics, clinical characteristics, laboratory data, radiographic features, and treatment at each visit. Comorbidities and extra-musculoskeletal manifestations (EMMs) were collected at baseline and at least every 2 years, and disease activity (ASDAS-CRP) and functional status (BASFI) measures were collected every 6 months.
+
+Patient population. AS patients ≥ 18 years fulfilling the modified New York criteria for AS (study period 2002-20) with at least 6 months of follow-up were included. Patients provided written informed consent.
+
+Exposure. AS comorbidities (N=28) and EMMs (N=3) present within 3 years of enrollment (pre-specified on the baseline case-report form) which occurred in ≥1%, were included as baseline morbidities. The 3-year period was chosen to allow sufficient time for detection of morbidities after enrollment. Comorbidities and EMMs were defined based on a patient-reported physician diagnosis, use of medications specific to the comorbidity or EMM, and standard measurement thresholds where available (Supplementary Table 1). For example, depression was defined as patient-reported physician diagnosis of depression, use of anti-depressant medications (selective serotonin reuptake inhibitors, serotonin and norepinephrine reuptake inhibitors, or tricyclics), or a Center for Epidemiologic Studies Depression Scale (CES-D) ≥16 (2). Hypertension was defined as either a patient-reported physician diagnosis of hypertension, the use of antihypertensive medications, systolic blood pressure ≥140 mm of Hg on 2 consecutive study visits, or diastolic blood pressure ≥90 mmHg on 2 consecutive clinic visits (3).
+
+We defined multimorbidity as the presence of ≥2 morbidities (MM2+) and substantial multimorbidity as ≥5 morbidities (MM5+) (4). In order to avoid overestimating the multimorbidity in patients with AS, we did not include AS itself as one of the conditions when calculating morbidity counts. The total number of morbidities or chronic conditions present (0 to 31) was also calculated to represent the burden of multimorbidity.
+
+Outcomes. The primary outcomes of interest were the ASDAS- C-reactive protein (ASDAS-CRP) for disease activity and Bath Ankylosing Spondylitis Functional Index (BASFI) as a functional status measure. Secondary outcomes examined were the number of comorbidities over time, Bath Ankylosing Spondylitis Disease Activity Index (BASDAI), patient global, patient pain, spinal pain, fatigue score, enthesitis count (San Francisco enthesitis index), and 44/46 swollen and tender joint counts.
+
+Statistical analysis. Comorbidities and EMMs (morbidities) missing in >50% of patients were excluded from the primary cluster analysis. Among 28 comorbidities selected by clinical relevance and previous reports, we excluded nine comorbidities missing in >50% of patients (obesity, arrhythmias, glaucoma, congestive heart failure, stroke, obstructive sleep apnea, gastroesophageal reflux, peripheral neuropathy, and headache). All three EMMs, psoriasis, inflammatory bowel disease, and uveitis were included. Among the included 19 comorbidities and three EMMs (N=22), missing baseline values were imputed using Multiple Imputation by Chained Equations (MICE). Missing morbidity information at follow-up was imputed as follows: once a morbidity was recorded as present, it was marked present for all future visits. If a morbidity was missing at a visit and had been indicated as absent on both a previous and future visit, it was imputed as absent.
+
+Multimorbidity clusters or phenotypes were identified using K-median clustering. The optimal number of clusters (k) was determined using a scree plot of the sum of squared errors (SEE), by choosing the “elbow” of the plotted line (i.e. the value of k where we start to have diminishing returns by increasing the value of k, Supplementary figure 1) (5). The multimorbidity clusters were named based on the predominant comorbidity or EMM within the cluster and across the different clusters. The baseline characteristics of the clusters were compared. To ascertain the stability of the clusters, sensitivity analyses were performed including comorbidities and EMMs at multiple time points (baseline only, baseline to 5 years of follow up, baseline to the last follow up visit). Similarly, separate sensitivity analyses were performed with only patients where BMI/ obesity and psoriasis data were available, and by excluding EMMs.
+
+Generalized linear models were used to estimate the expected value of disease activity over time according to the multimorbidity counts (MM 0-1, MM 2-4, and MM 5+) and multimorbidity clusters at baseline. Generalized estimating equations (GEE) with an auto-regressive correlation structure (to account for multiple observations per patient) was used to examine the associations of multimorbidity counts and multimorbidity clusters with measures of disease activity and functional status over time separately. Variables with nearly normal distributions were analyzed as Gaussian, while others (e.g., swollen joint count) as a Poisson distribution. MICE was used to impute missing covariates to include all subjects in the longitudinal analysis (6).
+
+All models were adjusted for age at baseline, sex, race/ethnicity, time since baseline, current smoker (baseline), human leukocyte antigen B27 (HLA-B27) positivity, symptom duration, baseline modified Stoke Ankylosing Spondylitis Spinal Score (mSASSS), tumor necrosis factor inhibitors (TNFi) use (longitudinal), and NSAIDs use (longitudinal) as covariates. Non-linear associations for age at baseline and time since baseline were included via natural cubic splines. The parameter estimates for each cluster were interpreted as the relative difference between that cluster and the 'no morbidities' cluster.
+
+Analyses were performed using Stata 16 (College Station, TX: StataCorp LLC) and R 4.0.3 (R Foundation for Statistical Computing, Vienna, Austria).
+
+REFERENCES
+
+1.        Rahbar MH, Lee M, Hessabi M, Tahanan A, Brown MA, Learch TJ, et al. Harmonization, data management, and statistical issues related to prospective multicenter studies in Ankylosing spondylitis (AS): Experience from the Prospective Study Of Ankylosing Spondylitis (PSOAS) cohort. Contemp Clin Trials Commun. 2018 Sep;11:127–35.
+
+2.        Radloff LS. The CES-D Scale: A Self-Report Depression Scale for Research in the General Population. Applied Psychological Measurement. 1977 Jun 1;1(3):385–401.
+
+3.        Liew JW, Ward MM, Reveille JD, Weisman M, Brown MA, Lee M, et al. Nonsteroidal Anti-inflammatory Drug use is Associated with Incident Hypertension in Ankylosing Spondylitis. Arthritis Care Res (Hoboken). 2019 Sep 17;
+
+4.        Crowson CS, Gunderson TM, Dykhoff HJ, Myasoedova E, Atkinson EJ, Kronzer VL, et al. Comprehensive assessment of multimorbidity burden in a population-based cohort of patients with rheumatoid arthritis. RMD Open. 2022 Jan;8(1):e002022.
+
+5.        Alkhayrat M, Aljnidi M, Aljoumaa K. A comparative dimensionality reduction study in telecom customer segmentation using deep learning and PCA. J Big Data. 2020 Feb 3;7(1):9.
+
+6.        van Buuren S, Oudshoorn CGM. Multivariate Imputation by Chained Equations: MICE V1.0 User’s manual. TNO Report PG/VGZ/00.038. TNO Preventie en Gezondheid: Leiden, 2000. Available from: http://www.multiple-imputation.com/.
+
+"
+
+}
+
+]
+
+},        {
+
+"role": "user",
+
+"content": [
+
+{
+
+"type": "text",
+
+"text": "OBJECTIVE: To examine demographic and clinical characteristics associated with diagnostic delay in psoriatic arthritis (PsA).
+
+DATASET: population-based study from Olmsted County, MN residents
+
+STUDY DESIGN: retrospective, population-based cohort of incident adult (≥18 years) PsA patients from Olmsted County, MN from 2000-17.
+
+STATISTICAL ANALYSIS:
+
+Methods: We characterized a retrospective, population-based cohort of incident adult (≥18 years) PsA patients from Olmsted County, MN from 2000-17. All patients met classification criteria. Diagnostic delay was defined as the time from any patient-reported PsA-related joint symptom to a physician diagnosis of PsA.  Factors associated with delay in PsA diagnosis were identified through logistic regression models.
+
+"
+
+}
+
+]
+
+},
+
+{
+
+"role": "assistant",
+
+"content": [
+
+{
+
+"type": "text",
+
+"text": "Data source. A retrospective inception cohort of Olmsted County, MN residents with PsA between 2000 and 2017 was assembled. The population of Olmsted County, Minnesota, in which resides the city of Rochester, is well suited for investigation of the epidemiology of PsA as comprehensive medical records for all residents seeking medical care for over five decades are available. A record linkage system allows ready access to the medical records from all health care providers for the local population, including the Mayo Clinic, the Olmsted Medical Center and affiliated hospitals, local nursing homes, and the few private practitioners 1,2. The population of Olmsted County in 2010 was 144,248 with 74.7% being adults of age ≥18 years. Patients who denied authorization to use their medical records for research were excluded. The study was approved by the Mayo Clinic (18-010851) and Olmsted Medical Center (051-OMC-18) institutional review boards.
+
+Patient population and case ascertainment. PsA cases were defined as patients fulfilling ClASsification of Psoriatic ARthritis (CASPAR) criteria for PsA (sensitivity of 91.4% and specificity of 98.7%) 3. ICD-9/10 diagnostic codes for arthralgias, arthritis, monoarthritis, oligoarthritis, polyarthritis, spondylitis, ankylosing spondylitis, arthropathy, psoriatic arthropathy, spondyloarthropathy, and seronegative spondyloarthropathy were used to screen for patients with PsA. Medical record chart review of all potential cases was performed to ascertain fulfillment of the CASPAR criteria. Questionable cases were resolved by mutual agreement between study investigators. Patients ≥18 years fulfilling CASPAR criteria between January 1, 2000 and December 31, 2017 were included in the PsA incidence cohort.
+
+Outcomes. The primary outcome of interest was delay in diagnosis of PsA >2 years (i.e., the time from symptom onset to establishment of PsA diagnosis). Secondary outcomes were delays in PsA diagnosis of >6 months or >1 year. Symptom onset was defined as the first PsA-related musculoskeletal symptom (not explained by other diagnoses) documented by a clinician in the medical records. PsA-related musculoskeletal symptoms were defined as joint- or enthesis-related symptoms documented in the medical records that did not have a clear alternative explanation besides PsA such as trauma/injury, gout, fibromyalgia, or degenerative joint disease 4. MSK symptoms included were arthralgia, AM joint stiffness, pain or stiffness at entheseal sites, and inflammatory back pain. The PsA diagnosis date was the date of establishment of PsA diagnosis by a rheumatologist. For patients meeting CASPAR criteria but never seen by a rheumatologist, confirmatory diagnosis of PsA by any physician was included. Time to diagnosis was defined as the time from onset of symptoms to establishment of PsA diagnosis. Radiographic damage was defined based on parameters of joint erosion, destruction and proliferation from hand/wrist and feet radiographs included in the Sharp-van der Heijde score modified for PsA (Table 1) 5.
+
+Covariates of interest. Complete medical records from all healthcare providers were identified and reviewed for each patient by PK using a standardized, pre-tested data abstraction form in the Research Electronic Data Capture (REDCap) system for consistency. Information regarding demographics, clinical characteristics, laboratory data, and radiographic features were collected. Psoriasis was confirmed by documentation of diagnosis in the medical record by either a dermatologist, rheumatologist, or positive skin biopsy. Severity of psoriasis was defined based on body surface area involvement, distribution of involved sites, and requirement for phototherapy or systemic therapy as documented in the medical records.
+
+Statistical analysis. Descriptive statistics (medians, percentages, etc.) were used to summarize the data. Chi-square, Fisher’s exact, or rank sum tests were used to compare characteristics between groups. Logistic regression models adjusted for age and sex were performed to identify factors associated with delay in PsA diagnosis. Trends in time from symptom onset to diagnosis of PsA were examined using linear regression models adjusted for age and sex with and without log transformation of the delay to address skewness. Model diagnostics were examined. Analyses were performed using SAS version 9.4 (SAS Institute, Cary, NC) and R 3.6.2 (R Foundation for Statistical Computing, Vienna, Austria).
+
+REFERENCES
+
+1.         Rocca WA, Yawn BP, St Sauver JL, Grossardt BR, Melton LJ. History of the Rochester Epidemiology Project: half a century of medical records linkage in a US population. Mayo Clin Proc 2012;87:1202-13.
+
+2.         St Sauver JL, Grossardt BR, Yawn BP, et al. Data resource profile: the Rochester Epidemiology Project (REP) medical records-linkage system. Int J Epidemiol 2012;41:1614-24.
+
+3.         Taylor W, Gladman D, Helliwell P, et al. Classification criteria for psoriatic arthritis: development of new criteria from a large international study. Arthritis Rheum 2006;54:2665-73.
+
+4.         A Delphi Consensus Study to Standardize Terminology for the Pre-clinical Phase of Psoriatic Arthritis [Internet]. ACR Meeting Abstracts [Internet. Accessed November 19, 2020]. Available from: https://acrabstracts.org/abstract/a-delphi-consensus-study-to-standardize-terminology-for-the-pre-clinical-phase-of-psoriatic-arthritis/
+
+5.         van der Heijde D, Gladman DD, Kavanaugh A, Mease PJ. Assessing structural damage progression in psoriatic arthritis and its role as an outcome in research. Arthritis Research & Therapy 2020;22:18.
+
+"
+
+}
+
+]
+
+},        {
+
+"role": "user",
+
+"content": [
+
+{
+
+"type": "text",
+
+"text": "
+
+OBJECTIVE:
+
+DATASET:
+
+STUDY DESIGN:
+
+STATISTICAL ANALYSIS:
+
+"
+
+}
+
+]
+
+}
+
+]
+
+}
+
+]
