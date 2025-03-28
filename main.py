@@ -12,6 +12,7 @@ if __name__ == "__main__":
     while True:
         # get input from user
         user_message = input("User: ")
+
         # assistant_response, chat_history = research_ideas_chatbot(user_message, chat_history)
         assistant_response, chat_history = research_ideas_interview_chatbot(user_message, chat_history)
 
