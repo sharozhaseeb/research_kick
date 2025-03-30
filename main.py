@@ -31,14 +31,14 @@ if __name__ == "__main__":
         #INTRO WRITER
         #-------------------------------------
 
-        # print("\nStarting Intro writer Assistant...\n")
-        # # get input from user
-        # user_message = input("User: ")
-        # assistant_response, chat_history = intro_writer(user_message, chat_history)
-        # print(f"\nAssistant: {assistant_response}\n")
-        # print(f"type of response: {type(assistant_response)}")
-        # print("--------------------------------------------")
-        # # load response as json
+        print("\nStarting Intro writer Assistant...\n")
+        # get input from user
+        user_message = input("User: ")
+        assistant_response, chat_history = intro_writer(user_message, chat_history)
+        print(f"\nAssistant: {assistant_response}\n")
+        print(f"type of response: {type(assistant_response)}")
+        print("--------------------------------------------")
+        # load response as json
         # try:
         #     response_dict = json.loads(assistant_response)
         #     print("Parsed Response (Indented):")
@@ -98,14 +98,14 @@ if __name__ == "__main__":
 
 
 
-        #RESULT WRITER
-        #-------------------------------------
+        # #RESULT WRITER
+        # #-------------------------------------
         
-        print("\nStarting Results writer Assistant...\n")
-        # get input from user
-        user_message = input("User: ")
-        assistant_response, chat_history = result_writer(user_message, chat_history)
-        print(f"\nAssistant: {assistant_response}\n")
-        print(f"type of response: {type(assistant_response)}")
-        print("--------------------------------------------")
+        # print("\nStarting Results writer Assistant...\n")
+        # # get input from user
+        # user_message = input("User: ")
+        # assistant_response, chat_history = result_writer(user_message, chat_history)
+        # print(f"\nAssistant: {assistant_response}\n")
+        # print(f"type of response: {type(assistant_response)}")
+        # print("--------------------------------------------")
 
