@@ -116,8 +116,10 @@ def method_writer(user_message, chat_history = None):
     # print("Sending message to OpenAI...")
 
     completion = client.chat.completions.create(
-                                                    model="gpt-4o",
+                                                    model="chatgpt-4o-latest",
                                                     messages=messages,
+                                                    temperature=0.7,
+                                                    store=True,
                                                     # response_format={
                                                     #                     "type": "json_object"
                                                     #                 },
